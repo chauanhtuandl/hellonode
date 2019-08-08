@@ -5,12 +5,13 @@ node {
         /* Let's make sure we have the repository cloned to our workspace */
 
         checkout scm
+        sh 'ls -la'
     }
 
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-        sh 'ls -la'
+
         app = docker.build("chauanhtuandl/hellonode")
     }
 
