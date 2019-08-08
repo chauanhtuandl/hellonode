@@ -1,9 +1,9 @@
+def image
 pipeline {
   environment {
     registry = "chauanhtuandl/hellonode"
     registryCredential = 'chauanhtuandl'
   }
-  def image
   agent any
   stages {
     stage('Cloning Git') {
