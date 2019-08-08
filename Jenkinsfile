@@ -3,6 +3,7 @@ pipeline {
     registry = "chauanhtuandl/hellonode"
     registryCredential = 'chauanhtuandl'
   }
+  def image
   agent any
   stages {
     stage('Cloning Git') {
@@ -13,7 +14,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-            def image = docker.build("chauanhtuandl/hellonode")
+            image = docker.build("chauanhtuandl/hellonode")
         }
       }
     }
