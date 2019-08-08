@@ -5,7 +5,7 @@ node {
         /* Let's make sure we have the repository cloned to our workspace */
 
         checkout scm
-        sh 'ls -la'
+        echo 'Building..'
     }
 
     stage('Build image') {
