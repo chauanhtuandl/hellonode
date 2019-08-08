@@ -21,8 +21,8 @@ pipeline {
       steps{
         script {
             docker.withRegistry('https://registry.hub.docker.com', 'chauanhtuandl') {
-            push("${env.BUILD_NUMBER}")
-            push("latest")
+            Image.push("${env.BUILD_NUMBER}")
+            Image.push("latest")
             }
         }
       }
