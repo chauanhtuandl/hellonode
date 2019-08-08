@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "gustavoapolinario/docker-test"
+    registry = "chauanhtuandl/hellonode"
     registryCredential = 'chauanhtuandl'
   }
   agent any
@@ -21,8 +21,8 @@ pipeline {
       steps{
         script {
             docker.withRegistry('https://registry.hub.docker.com', 'chauanhtuandl') {
-            image.push("${env.BUILD_NUMBER}")
-            image.push("latest")
+            registry.push("${env.BUILD_NUMBER}")
+            registry.push("latest")
             }
         }
       }
