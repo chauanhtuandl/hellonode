@@ -13,7 +13,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-            docker.build("chauanhtuandl/hellonode")
+            def image = docker.build("chauanhtuandl/hellonode")
         }
       }
     }
@@ -21,8 +21,8 @@ pipeline {
       steps{
         script {
             docker.withRegistry('https://registry.hub.docker.com', 'chauanhtuandl') {
-            registry.push("${env.BUILD_NUMBER}")
-            registry.push("latest")
+            image.push("${env.BUILD_NUMBER}")
+            image.push("latest")
             }
         }
       }
