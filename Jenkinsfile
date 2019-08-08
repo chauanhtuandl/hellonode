@@ -12,10 +12,9 @@ pipeline {
     }
     stage('Building image') {
       steps{
-        docker.build("chauanhtuandl/hellonode")
-        // script {
-        //   docker.build registry + ":$BUILD_NUMBER"
-        // }
+        script {
+            docker.build("chauanhtuandl/hellonode")
+        }
       }
     }
   }
