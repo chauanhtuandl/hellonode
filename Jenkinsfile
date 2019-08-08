@@ -10,13 +10,14 @@ pipeline {
         checkout scm
       }
     }
-    // stage('Building image') {
-    //   steps{
-    //     script {
-    //       docker.build registry + ":$BUILD_NUMBER"
-    //     }
-    //   }
-    // }
+    stage('Building image') {
+      steps{
+        docker.build("chauanhtuandl/hellonode")
+        // script {
+        //   docker.build registry + ":$BUILD_NUMBER"
+        // }
+      }
+    }
   }
 }
 
