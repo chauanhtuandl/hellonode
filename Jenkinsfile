@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git checkout scm
+        checkout scm
       }
     }
     // stage('Building image') {
